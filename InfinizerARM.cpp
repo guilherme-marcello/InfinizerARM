@@ -1,12 +1,12 @@
 #include "Arduino.h"
 #include "InfinizerARM.h"
-Ultrasonic::Ultrasonic(int Trigger, int Echo){
+Ultrasonic::Ultrasonic(uint8_t Trigger, uint8_t Echo){
   pinMode(Trigger,OUTPUT);
   pinMode(Echo,INPUT);
   _trigger = Trigger;
   _echo = Echo;
 }
-int Ultrasonic::get_distance(){
+uint16_t Ultrasonic::get_distance(){
   digitalWrite(_trigger,LOW);
   delayMicroseconds(2);
   digitalWrite(_trigger,HIGH);
@@ -18,7 +18,7 @@ int Ultrasonic::get_distance(){
 Robot::Robot(){
   _robot = true;
 }
-bool Robot::isObstacleInFront(int distance, int sec_distance=20){
+bool Robot::isObstacleInFront(uint16_t distance, uint16_t sec_distance=20){
   return (distance <= sec_distance) ? true : false;
 }
 
@@ -46,7 +46,7 @@ void Motordriver::stop(){
   analogWrite(S_B, 0);
 }
 
-void Motordriver::right(int valueSA, int valueSB){
+void Motordriver::right(uint8_t valueSA, uint8_t valueSB){
   digitalWrite(M_A1, HIGH);
   digitalWrite(M_A2, LOW);
   digitalWrite(M_B1, LOW);
@@ -55,7 +55,7 @@ void Motordriver::right(int valueSA, int valueSB){
   analogWrite(S_B, valueSB);
 }
 
-void Motordriver::left(int valueSA, int valueSB){
+void Motordriver::left(uint8_t valueSA, uint8_t valueSB){
   digitalWrite(M_A1, LOW);
   digitalWrite(M_A2, HIGH);
   digitalWrite(M_B1, HIGH);
@@ -64,7 +64,7 @@ void Motordriver::left(int valueSA, int valueSB){
   analogWrite(S_B, valueSB);
 }
 
-void Motordriver::forward(int valueSA, int valueSB){
+void Motordriver::forward(uint8_t valueSA, uint8_t valueSB){
   digitalWrite(M_A1, HIGH);
   digitalWrite(M_A2, LOW);
   digitalWrite(M_B1, HIGH);
@@ -73,7 +73,7 @@ void Motordriver::forward(int valueSA, int valueSB){
   analogWrite(S_B, valueSB);
 }
 
-void Motordriver::backwards(int valueSA, int valueSB){
+void Motordriver::backwards(uint8_t valueSA, uint8_t valueSB){
   digitalWrite(M_A1, LOW);
   digitalWrite(M_A2, HIGH);
   digitalWrite(M_B1, LOW);

@@ -10,12 +10,12 @@ void setup(){
 
 void loop(){
   Serial.println("Smooth FORWARD: increase");
-  for(int i=0; i<255; i++){
+  for(uint8_t i=0; i<255; i++){
     motor.forward(i,i);
     delay(50);
   }
   Serial.println("Smooth FORWARD: decrease");
-  for(int i=255; i>0; i--){
+  for(uint8_t i=255; i>0; i--){
     motor.forward(i,i);
     delay(50);
   }

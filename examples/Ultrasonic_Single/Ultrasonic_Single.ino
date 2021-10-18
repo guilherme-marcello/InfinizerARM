@@ -1,7 +1,7 @@
 #include <InfinizerARM.h>
-int trigger = 13;
-int echo = 12;
-long distancia;
+#define trigger 13
+#define echo 12
+uint16_t distancia;
 Ultrasonic sensorUltra(trigger,echo);
 void setup(){
   Serial.begin(9600);

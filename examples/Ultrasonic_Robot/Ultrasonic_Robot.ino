@@ -2,7 +2,7 @@
 #define trigger1 13
 #define echo1 12
 uint16_t distance;
-uint8_t sec_distance = 5; // 5cm
+uint16_t sec_distance = 5; // 5cm
 
 Robot robot;
 Ultrasonic frontal(trigger1,echo1);

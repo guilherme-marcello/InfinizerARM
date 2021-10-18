@@ -1,8 +1,8 @@
 
 # Motor driver and US-sensor integration for Arduino
-Version: 1.2.0
+Version: 1.2.1
 
-Release date: 2021 May 20
+Release date: 2021 October 18
 
 Author: Guilherme Marcello (<guilemosmarcello@gmail.com>)
 
@@ -18,10 +18,10 @@ Download the zip file from main branch, navigate to *Sketch* > *Include Library*
 Official guideline: https://www.arduino.cc/en/Guide/Libraries
 
 ## Documentation
-* `Ultrasonic(int Trigger, int Echo)`<br>
+* `Ultrasonic(uint8_t Trigger, uint8_t Echo)`<br>
   Constructor. Use trigger and echo pin numbers as `Trigger` and `Echo` arguments.
   
-  * `int Ultrasonic::get_distance()`<br>
+  * `uint16_t Ultrasonic::get_distance()`<br>
   It sends an ultrasonic pulse (1 per 10 microseconds) and return relative distance in centimeters by calculating the time travel and the speed of the sound (air).
 
 * `Robot()`<br>
@@ -36,14 +36,14 @@ Official guideline: https://www.arduino.cc/en/Guide/Libraries
   * `void Motordriver::stop()`<br>
   Writes LOW to both motors enable pin.
   
-  * `void Motordriver::right(int valueSA, int valueSB)`<br>
+  * `void Motordriver::right(uint8_t valueSA, uint8_t valueSB)`<br>
   Writes analog values `valueSA` and `valueSB` to motor driver pins. Motor rotation: A-Clockwise, B-Counterclockwise. 
   
-  * `void Motordriver::left(int valueSA, int valueSB)`<br>
+  * `void Motordriver::left(uint8_t valueSA, uint8_t valueSB)`<br>
   Writes analog values `valueSA` and `valueSB` to motor driver pins. Motor rotation: A-Counterclockwise, B-Clockwise. 
 
-  * `void Motordriver::forward(int valueSA, int valueSB)`<br>
+  * `void Motordriver::forward(uint8_t valueSA, uint8_t valueSB)`<br>
   Writes analog values `valueSA` and `valueSB` to motor driver pins. Motor rotation: A-Clockwise, B-Clockwise. 
 
-  * `void Motordriver::backwards(int valueSA, int valueSB)`<br>
+  * `void Motordriver::backwards(uint8_t valueSA, uint8_t valueSB)`<br>
   Writes analog values `valueSA` and `valueSB` to motor driver pins. Motor rotation: A-Counterclockwise, B-Counterclockwise. 

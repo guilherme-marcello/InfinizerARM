@@ -4,16 +4,16 @@
 
 class Ultrasonic {
   public:
-    Ultrasonic(int Trigger, int Echo);
-    int get_distance();
+    Ultrasonic(uint8_t Trigger, uint8_t Echo);
+    uint16_t get_distance();
   private:
-    int _trigger;
-    int _echo;
+    uint8_t _trigger;
+    uint8_t _echo;
 };
 class Robot {
   public:
     Robot();
-    bool isObstacleInFront(int distance, int sec_distance=20);
+    bool isObstacleInFront(uint16_t distance, uint16_t sec_distance=20);
   private:
     bool _robot;
 };
@@ -21,17 +21,17 @@ class Motordriver {
   public:
     Motordriver(uint8_t pinos[6]);
     void stop();
-    void right(int valueSA, int valueSB);
-    void left(int valueSA, int valueSB);
-    void forward(int valueSA, int valueSB);
-    void backwards(int valueSA, int valueSB);
+    void right(uint8_t valueSA, uint8_t valueSB);
+    void left(uint8_t valueSA, uint8_t valueSB);
+    void forward(uint8_t valueSA, uint8_t valueSB);
+    void backwards(uint8_t valueSA, uint8_t valueSB);
   private:
-    int S_A;  //speed motor a
-    int M_A1; //motor a = +
-    int M_A2; //motor a = -
-    int M_B1; //motor b = -
-    int M_B2; //motor b = +
-    int S_B;  //speed motor    
+    uint8_t S_A;  //speed motor a
+    uint8_t M_A1; //motor a = +
+    uint8_t M_A2; //motor a = -
+    uint8_t M_B1; //motor b = -
+    uint8_t M_B2; //motor b = +
+    uint8_t S_B;  //speed motor    
 };
 #endif
 
