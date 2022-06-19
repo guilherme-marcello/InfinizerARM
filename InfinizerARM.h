@@ -4,12 +4,20 @@
 
 class Ultrasonic {
   public:
+    enum Side: byte {
+      LEFT,
+      RIGHT
+    };
     Ultrasonic(uint8_t Trigger, uint8_t Echo);
     uint16_t get_distance();
+    Ultrasonic::Side get_side();
+    void set_side(Ultrasonic::Side new_side);
   private:
     uint8_t _trigger;
     uint8_t _echo;
+    Side    _side;
 };
+
 class Robot {
   public:
     Robot();
@@ -17,6 +25,7 @@ class Robot {
   private:
     bool _robot;
 };
+
 class Motordriver {
   public:
     Motordriver(uint8_t pinos[6]);

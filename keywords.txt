@@ -1,13 +1,15 @@
-Ultrasonic  KEYWORD1
-Robot   KEYWORD1
-Motordriver KEYWORD1
+Ultrasonic          KEYWORD1
+Robot               KEYWORD1
+Motordriver         KEYWORD1
 
-get_distance    KEYWORD2
+get_distance        KEYWORD2
+get_side            KEYWORD2
+set_side            KEYWORD2
 
 isObstacleInFront   KEYWORD2
 
-left    KEYWORD2
-right   KEYWORD2
-forward KEYWORD2
-backwards   KEYWORD2
-stop    KEYWORD2
+left                KEYWORD2
+right               KEYWORD2
+forward             KEYWORD2
+backwards           KEYWORD2
+stop                KEYWORD2

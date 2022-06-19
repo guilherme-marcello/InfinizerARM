@@ -1,11 +1,14 @@
 #include "Arduino.h"
 #include "InfinizerARM.h"
+
 Ultrasonic::Ultrasonic(uint8_t Trigger, uint8_t Echo){
   pinMode(Trigger,OUTPUT);
   pinMode(Echo,INPUT);
   _trigger = Trigger;
   _echo = Echo;
+  _side = LEFT;
 }
+
 uint16_t Ultrasonic::get_distance(){
   digitalWrite(_trigger,LOW);
   delayMicroseconds(2);
@@ -15,11 +18,21 @@ uint16_t Ultrasonic::get_distance(){
   long dt = pulseIn(_echo,HIGH);
   return dt*0.034*0.5;
 }
+
+Ultrasonic::Side Ultrasonic::get_side() {
+  return _side;
+}
+
+void Ultrasonic::set_side(Ultrasonic::Side new_side) {
+  _side = new_side;
+}
+
 Robot::Robot(){
   _robot = true;
 }
+
 bool Robot::isObstacleInFront(uint16_t distance, uint16_t sec_distance=20){
-  return (distance <= sec_distance) ? true : false;
+  return distance <= sec_distance;
 }
 
 Motordriver::Motordriver(uint8_t pinos[6]){
