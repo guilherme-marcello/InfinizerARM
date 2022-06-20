@@ -1,8 +1,10 @@
 name: Compile examples of library
 
 on:
-  - push
-  
+  push:
+    paths-ignore:
+      - '*.txt'
+      - '*.md'
 jobs:
   compile-examples:
     runs-on: ubuntu-latest
