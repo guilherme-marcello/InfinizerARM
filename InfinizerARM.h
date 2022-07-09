@@ -18,14 +18,6 @@ class Ultrasonic {
     Side    _side;
 };
 
-class Robot {
-  public:
-    Robot();
-    bool isObstacleInFront(uint16_t distance, uint16_t sec_distance=20);
-  private:
-    bool _robot;
-};
-
 class Motordriver {
   public:
     Motordriver(uint8_t pinos[6]);
@@ -42,5 +34,16 @@ class Motordriver {
     uint8_t M_B2; //motor b = +
     uint8_t S_B;  //speed motor    
 };
-#endif
 
+class Robot {
+  public:
+    Robot();
+    bool isObstacleInFront(uint16_t distance, uint16_t sec_distance=20);
+    void set_motordriver(Motordriver motordriver);
+    void avoid(Ultrasonic ultrasonic, uint16_t sec_distance, uint8_t base_speed);
+  private:
+    bool _robot;
+    Motordriver _motordriver = Motordriver((uint8_t[6]) {});
+};
+
+#endif

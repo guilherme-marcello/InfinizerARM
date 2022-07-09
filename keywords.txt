@@ -6,6 +6,8 @@ get_distance        KEYWORD2
 get_side            KEYWORD2
 set_side            KEYWORD2
 
+set_motordriver     KEYWORD2
+avoid               KEYWORD2
 isObstacleInFront   KEYWORD2
 
 left                KEYWORD2
