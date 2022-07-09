@@ -1,14 +1,20 @@
-name: Compile examples of library
+name: Lint and compile of the project
 
 on:
-  - push
-  
+  push:
+    paths-ignore:
+      - '*.txt'
+      - '*.md'
 jobs:
   compile-examples:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Linting library and examples
+        uses: arduino/arduino-lint-action@v1
+        with:
+          compliance: strict
       - name: Compile library examples
         uses: arduino/compile-sketches@v1
         with:

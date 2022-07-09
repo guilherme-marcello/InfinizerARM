@@ -19,7 +19,7 @@ Official guideline: https://www.arduino.cc/en/Guide/Libraries
 
 ## Documentation
 * `Ultrasonic(uint8_t Trigger, uint8_t Echo)`<br>
-  Constructor. Use trigger and echo pin numbers as `Trigger` and `Echo` arguments.
+  Constructor. Use trigger and echo pin numbers as `Trigger` and `Echo` arguments. The default sensor side is LEFT.
   
   * `uint16_t Ultrasonic::get_distance()`<br>
   It sends an ultrasonic pulse (1 per 10 microseconds) and return relative distance in centimeters by calculating the time travel and the speed of the sound (air).
@@ -31,7 +31,7 @@ Official guideline: https://www.arduino.cc/en/Guide/Libraries
   Returns true if argument `distance`is less or equal than optional argument `sec_distance` else returns false.
   
 * `Motordriver(uint8_t pinos[6])`<br>
-  Constructor. Iniitializes and configures the motor driver using an 6-sized `uiint8_t`  array. The indexed collection argument `pinos` should follow the rule: {ENA,IN1,IN2,IN3,IN4,ENB}. 
+  Constructor. Initializes and configures the motor driver using an 6-sized `uiint8_t`  array. The indexed collection argument `pinos` should follow the rule: {ENA,IN1,IN2,IN3,IN4,ENB}. 
   
   * `void Motordriver::stop()`<br>
   Writes LOW to both motors enable pin.
